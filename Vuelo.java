@@ -17,8 +17,9 @@ public class Vuelo {
         this.numMaxPassengers = numMaxPassengers;
         this.numActualPassengers = 0;
         this.listOfPassengers = new Pasajero[numMaxPassengers];
-
+        
     }
+    
 
     public void insertPassenger(Pasajero passenger) {
         listOfPassengers[numActualPassengers] = passenger;
