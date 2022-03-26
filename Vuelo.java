@@ -19,45 +19,77 @@ public class Vuelo {
         this.listOfPassengers = new Pasajero[numMaxPassengers];
 
     }
+
     public void insertPassenger(Pasajero passenger) {
         listOfPassengers[numActualPassengers] = passenger;
-        numActualPassengers ++;
+        numActualPassengers++;
     }
+
     public String getIdentifier() {
         return identifier;
     }
+
     public void setIdentifier(String identifier) {
         this.identifier = identifier;
     }
+
     public String getCityOfOrigin() {
         return cityOfOrigin;
     }
+
     public void setCityOfOrigin(String cityOfOrigin) {
         this.cityOfOrigin = cityOfOrigin;
     }
+
     public String getDestinationCity() {
         return destinationCity;
     }
+
     public void setDestinationCity(String destinationCity) {
         this.destinationCity = destinationCity;
     }
+
     public double getPrice() {
         return price;
     }
+
     public void setPrice(double price) {
         this.price = price;
     }
+
     public int getNumMaxPassengers() {
         return numMaxPassengers;
     }
+
     public void setNumMaxPassengers(int numMaxPassengers) {
         this.numMaxPassengers = numMaxPassengers;
     }
+
     public Pasajero[] getListOfPassengers() {
         return listOfPassengers;
     }
+
     public void setListOfPassengers(Pasajero[] listOfPassengers) {
         this.listOfPassengers = listOfPassengers;
     }
-    
+
+    public Pasajero getPassenger(int i) {
+        return listOfPassengers[i];
+    }
+
+    public Pasajero getPassenger(String passport) {
+        boolean found = false;
+        int i = 0;
+        Pasajero pas = null;
+        while (!!found && (i < listOfPassengers.length)) {
+
+            if (passport.equals(listOfPassengers[i].getPassport())) {
+                found = true;
+                pas = listOfPassengers[i];
+            }
+            i++;
+        }
+        return pas;
+    }
+
 }
